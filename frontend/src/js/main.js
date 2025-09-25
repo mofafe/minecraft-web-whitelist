@@ -1,6 +1,11 @@
-let element = document.getElementById('mytext');
+let element = document.getElementById('name');
+let button = document.getElementById('send-btn');
 
-fetch("http://localhost:20000", {
-  method: "POST",
-  body: element.value,
-});
+button.addEventListener('click', handleClick);
+
+function handleClick() {
+    fetch("http://localhost:8000", {
+        method: "POST",
+        body: element.value,
+    });
+}

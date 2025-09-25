@@ -12,8 +12,11 @@ async function handler(request: Request): Promise<Response> {
 }
 
 serve(async (req) => {
-  const data = await req.text();
-  main(data)
+  if (req.method === "POST") {
+    const data = await req.text();
+    console.log(main(data))
+    return new Response("OK");
+  }
   
-  return new Response("OK");
+  return new Response("Not Found", { status: 404 });
 });
