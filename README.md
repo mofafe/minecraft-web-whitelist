@@ -1,2 +1,3 @@
 # minecraft-web-whitelist
 MinecraftでWebを使ってWhitelistに追加するツール
+まだ全然できてない
