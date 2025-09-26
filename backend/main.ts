@@ -1,14 +1,17 @@
 import {deps} from './deps.ts';
 import {serve} from 'https://deno.land/std@0.187.0/http/mod.ts'
+import KeyJson from './key.json' with {type: "json"};
 
-function main(player_name: string) {
-    console.log(deps("", "", "", ""))
+type KeyType = {
+  ip: string;
+  password: string;
+  port: string;
 }
 
-async function handler(request: Request): Promise<Response> {
-    let response = new Response("ok");
+const key = KeyJson as KeyType;
 
-    return response;
+function main(player_name: string) {
+    console.log(deps(key.ip, key.password, key.port, player_name))
 }
 
 serve(async (req) => {
