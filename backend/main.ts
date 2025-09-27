@@ -5,7 +5,7 @@ import KeyJson from './key.json' with {type: "json"};
 type KeyType = {
   ip: string;
   password: string;
-  port: string;
+  port: number;
 }
 
 const key = KeyJson as KeyType;
