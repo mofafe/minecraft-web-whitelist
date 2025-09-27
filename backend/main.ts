@@ -8,7 +8,7 @@ type KeyType = {
   port: number;
 }
 
-const key = KeyJson as KeyType;
+const key = KeyJson as unknown as KeyType;
 
 function main(player_name: string) {
     console.log(deps(key.ip, key.password, key.port, player_name))
